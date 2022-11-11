@@ -19,9 +19,13 @@ jobs:
       - name: Install dependencies
         run: |
           pipenv install --deploy --dev
+      - name: format
+        uses: rickstaa/action-black@v1.1.14
       - name: Move to flask folder
         run: |
           cd app
       - name: Run test suite
         run: |
           pipenv run pytest
+
+
